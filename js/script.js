@@ -3,7 +3,6 @@ const booksContainer = document.querySelector('.books__container');
 const errorContainer = document.querySelector('.error__container');
 const booksFromLoacalStorage = JSON.parse(localStorage.getItem('books')) || [];
 
-
 const bookTemplate = (title, author, priority, category) => {
   return `
   <tr class="book__wrapper">
@@ -16,9 +15,8 @@ const bookTemplate = (title, author, priority, category) => {
 }
 
 const generateLibrary = () => {
-  booksContainer.innerHTML = '';
-
   if (booksFromLoacalStorage.length) {
+    booksContainer.innerHTML = '';
     booksFromLoacalStorage
       .forEach((book) => {
           const { id, title, author, priority, category } = book;
@@ -38,8 +36,6 @@ addBookForm.addEventListener('submit', (e) => {
     book__categories: bookCategory
     } = e.target;
 
-  
-    
   if(bookTitle.value.length >= 1 && bookAuthor.value.length >= 3 && bookPriority.value.length > 0 && bookCategory.value.length > 0) {
 
     const dataHolder = {

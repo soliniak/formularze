@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Formularze</title>
 </head>
 <body>
   <header>
-    <div class="error__container">
-      
-    </div>
+    <div class="error__container"></div>
   </header>
   <main>
     <div class="container">
@@ -20,20 +22,32 @@
         <h2 class="subtitle">Formularz</h2>
 
         <form class="book__form">
-          <input name="book__title" type="text" class="book__title" minlength="1" required>
-          <input name="book__author" type="text" class="book__author" minlength="3" required>
-          <input name="book__priority" type="number" min="1" max="5" class="book__priority">
-          
-          <select name="book__categories" id="book__categories" class="book__categories" required>
-            <option value="Komedia" class="book__category">Komedia</option>
-            <option value="Sensacja" class="book__category">Sensacja</option>
-            <option value="Thriller" class="book__category">Thriller</option>
-          </select>
-          
-          
-          <button class="btn send__books">Wyślij</button>
-        </form>
+          <div class="form__row">
+            <label class="input__label" for="book__title">Tytuł</label>
+            <input name="book__title" type="text" class="book__title" minlength="1" required>
+          </div>
 
+          <div class="form__row">
+            <label class="input__label" for="book__author">Autor</label>
+            <input name="book__author" type="text" class="book__author" minlength="3" required>
+          </div>
+          
+          <div class="form__row">
+            <label class="input__label" for="book__priority">Priorytet</label>
+            <input name="book__priority" type="number" min="1" max="5" class="book__priority" required>
+          </div>
+
+          <div class="form__row">
+            <label class="input__label" for="book__categories">Kategoria</label>
+            <select name="book__categories" id="book__categories" class="book__categories" required>
+              <option value="Komedia" class="book__category">Komedia</option>
+              <option value="Sensacja" class="book__category">Sensacja</option>
+              <option value="Thriller" class="book__category">Thriller</option>
+            </select>
+          </div>
+            
+          <button class="btn send__books">Dodaj książkę</button>
+        </form>
       </div>
       
       <table class="books__library">
@@ -47,10 +61,7 @@
         </thead>
         <tbody class="books__container">
           <tr class="book__wrapper">
-            <td class="book__title">Tytuł</td>
-            <td class="book__author">Autor</td>
-            <td class="book__priority">Priorytet: 3</td>
-            <td class="book__category">Kategoria</td>
+            <td class="book__title" colspan="4">Brak wpisów</td>
           </tr>
         </tbody>
       </table>
