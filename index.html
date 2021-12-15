@@ -7,6 +7,11 @@
   <title>Formularze</title>
 </head>
 <body>
+  <header>
+    <div class="error__container">
+      
+    </div>
+  </header>
   <main>
     <div class="container">
       <h1 class="title">Biblioteka książek</h1>
@@ -15,9 +20,9 @@
         <h2 class="subtitle">Formularz</h2>
 
         <form class="book__form">
-          <input type="text" class="book__title" minlength="1" required>
-          <input type="text" class="book__author" minlength="3" required>
-          <input type="number" min="1" max="5" class="book__priority" required>
+          <input name="book__title" type="text" class="book__title" minlength="1" required>
+          <input name="book__author" type="text" class="book__author" minlength="3" required>
+          <input name="book__priority" type="number" min="1" max="5" class="book__priority">
           
           <select name="book__categories" id="book__categories" class="book__categories" required>
             <option value="Komedia" class="book__category">Komedia</option>
@@ -31,14 +36,27 @@
 
       </div>
       
-      <div class="books__library">
-        <div class="book__title">Tytuł</div>
-        <div class="book__author">Autor</div>
-        <div class="book__priority">Priorytet: 3</div>
-        <div class="book__category">Kategoria</div>
-      </div>
+      <table class="books__library">
+        <thead>
+          <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Priorytet</th>
+            <th>Kategoria</th>
+          </tr>
+        </thead>
+        <tbody class="books__container">
+          <tr class="book__wrapper">
+            <td class="book__title">Tytuł</td>
+            <td class="book__author">Autor</td>
+            <td class="book__priority">Priorytet: 3</td>
+            <td class="book__category">Kategoria</td>
+          </tr>
+        </tbody>
+      </table>
       
     </div>
   </main>
+  <script src="./js/script.js"></script>
 </body>
 </html>
